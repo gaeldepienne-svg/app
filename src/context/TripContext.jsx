@@ -13,7 +13,7 @@ export const TripProvider = ({ children }) => {
   const [accommodations, setAccommodations] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const isSupabaseEnabled = !!supabase;
+  const isSupabaseEnabled = !!supabase && !!import.meta.env.VITE_SUPABASE_URL && !!import.meta.env.VITE_SUPABASE_ANON_KEY;
 
   // Mappers
   const mapTripFromDB = (t) => ({
@@ -30,7 +30,7 @@ export const TripProvider = ({ children }) => {
       destination: t.destination,
       start_date: t.startDate,
       end_date: t.endDate,
-      status: t.status
+      status: t.status || 'upcoming'
   });
 
   const mapTransportFromDB = (t) => ({

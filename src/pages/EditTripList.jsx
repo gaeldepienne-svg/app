@@ -38,7 +38,7 @@ export const EditTripList = () => {
           'bg-gradient-to-b from-amber-400 via-orange-400 to-red-500',
           'bg-gradient-to-b from-emerald-400 via-teal-400 to-emerald-600',
       ];
-      const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % gradients.length;
+      const index = String(id).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % gradients.length;
       return gradients[index];
   };
 
@@ -49,7 +49,7 @@ export const EditTripList = () => {
           'bg-orange-100 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400',
           'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400',
       ];
-      const index = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % bgs.length;
+      const index = String(id).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) % bgs.length;
       return bgs[index];
   };
 
