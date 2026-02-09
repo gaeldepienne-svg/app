@@ -93,7 +93,7 @@ export const EditTripList = () => {
                         <span className="material-symbols-outlined text-xl">edit</span>
                     </button>
                     <button
-                        onClick={() => deleteTrip(trip.id)}
+                        onClick={async () => await deleteTrip(trip.id)}
                         className="flex items-center justify-center bg-red-100 dark:bg-red-500/20 text-red-500 rounded-full h-8 w-8 shadow-sm active:scale-90 transition-transform border border-red-200 dark:border-red-500/30">
                         <span className="material-symbols-outlined text-xl font-bold">delete</span>
                     </button>

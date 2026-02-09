@@ -14,7 +14,7 @@ export const CreateTrip = () => {
   const startDateRef = useRef();
   const endDateRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newTrip = {
       name: nameRef.current.value,
@@ -22,7 +22,7 @@ export const CreateTrip = () => {
       startDate: startDateRef.current.value,
       endDate: endDateRef.current.value,
     };
-    addTrip(newTrip);
+    await addTrip(newTrip);
     navigate('/');
   };
 

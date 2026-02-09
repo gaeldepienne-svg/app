@@ -28,7 +28,7 @@ export const EditAccommodation = () => {
   const [cancellable, setCancellable] = useState(accommodation.cancellable);
   const [paymentStatus, setPaymentStatus] = useState(accommodation.paymentStatus);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const updatedAccommodation = {
       ...accommodation,
@@ -44,7 +44,7 @@ export const EditAccommodation = () => {
       price: priceRef.current.value,
       paymentStatus
     };
-    updateAccommodation(updatedAccommodation);
+    await updateAccommodation(updatedAccommodation);
     navigate(`/trip/${id}/edit`);
   };
 

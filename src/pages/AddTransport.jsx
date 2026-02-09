@@ -23,7 +23,7 @@ export const AddTransport = () => {
   const priceRef = useRef();
   const ticketNumberRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const transport = {
       tripId: id,
@@ -38,7 +38,7 @@ export const AddTransport = () => {
       price: priceRef.current.value,
       ticketNumber: ticketNumberRef.current?.value,
     };
-    addTransport(transport);
+    await addTransport(transport);
     navigate(`/trip/${id}`);
   };
 

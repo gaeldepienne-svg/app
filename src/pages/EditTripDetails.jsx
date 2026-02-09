@@ -33,12 +33,12 @@ export const EditTripDetails = () => {
       }
   };
 
-  const handleDelete = (item) => {
+  const handleDelete = async (item) => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cet élément ?')) {
         if (item.itemType === 'transport') {
-            deleteTransport(item.id);
+            await deleteTransport(item.id);
         } else {
-            deleteAccommodation(item.id);
+            await deleteAccommodation(item.id);
         }
     }
   };

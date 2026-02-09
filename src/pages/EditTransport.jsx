@@ -28,7 +28,7 @@ export const EditTransport = () => {
   const priceRef = useRef();
   const ticketNumberRef = useRef();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const updatedTransport = {
       ...transport,
@@ -43,7 +43,7 @@ export const EditTransport = () => {
       price: priceRef.current.value,
       ticketNumber: ticketNumberRef.current.value,
     };
-    updateTransport(updatedTransport);
+    await updateTransport(updatedTransport);
     navigate(`/trip/${id}/edit`);
   };
 
